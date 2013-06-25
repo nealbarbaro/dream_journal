@@ -11,6 +11,7 @@ gem 'pry-debugger'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'meta_request'
+gem 'bootstrap-sass'
 
 # Gems used only for assets and not required
 # in production environments by default.
