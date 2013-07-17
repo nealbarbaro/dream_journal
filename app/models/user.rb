@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
     #column be in model
 
   before_save { |user| user.email = email.downcase } #a callback to force downcase
+  before_save :create_remember_token
 
   validates :name,  presence: true, length: { maximum: 40 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i   # v_e_g is a constant
@@ -30,6 +31,14 @@ class User < ActiveRecord::Base
   # create a database index on the email column, and require index be unique
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
+  after_validation { self.errors.messages.delete(:password_digest) }
+
+  private
+
+    def create_remember_token
+      self.remember_token = SecureRandom.urlsafe_base64
+    end
+
 end
 
   # in console do bundle exec annotate

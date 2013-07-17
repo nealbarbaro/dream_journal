@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def create #7 for the signup page submission, a POST request to /users URI
     @user = User.new(params[:user])
     if @user.save
+      sign_in @user
       flash[:sucess] = "Welcome to the Lucid Dream Journal!"
       # Handle a successful save, remember .save returns true or false
       redirect_to @user
