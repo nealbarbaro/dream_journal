@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   has_secure_password #adds pw and pwc attributes, requires presence of password
     #requires they match, and adds authenticate method, requires password_digest
     #column be in model
+  has_many :posts, dependent: :destroy
 
   before_save { |user| user.email = email.downcase } #a callback to force downcase
   before_save :create_remember_token
@@ -34,6 +35,12 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
   after_validation { self.errors.messages.delete(:password_digest) }
+
+  def feed
+    # This is preliminary. See "Following users" for the full implementation.
+    Post.where("user_id = ?", id)
+  end
+
 
   private
 

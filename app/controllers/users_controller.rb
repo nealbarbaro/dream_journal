@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show #7
     @user = User.find(params[:id])
+    @posts = @user.posts.paginate(page: params[:page])
   end
 
   def new #7 for the signup page, next add create for form submission
@@ -49,14 +50,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-    def signed_in_user
-      unless signed_in?
-        store_location
-        flash[:notice] = "Please sign in."
-        redirect_to sign_in_url
-      end
-    end
 
     def correct_user
       @user = User.find(params[:id])

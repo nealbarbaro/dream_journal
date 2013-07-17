@@ -5,6 +5,8 @@ DreamJournal::Application.routes.draw do
   #resource, along with named routes.
 
   resources :sessions, only: [:new, :create, :destroy]
+  resources :posts, only: [:create, :destroy]
+
 
   root              to: 'static_pages#home'
 
