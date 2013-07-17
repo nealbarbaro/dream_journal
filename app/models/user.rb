@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   #columns in memory.
 
   has_secure_password #adds pw and pwc attributes, requires presence of password
-    #requires they mach, and adds authenticate method, requires password_digest
+    #requires they match, and adds authenticate method, requires password_digest
     #column be in model
 
   before_save { |user| user.email = email.downcase } #a callback to force downcase

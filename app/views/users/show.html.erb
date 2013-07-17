@@ -1,0 +1,13 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <!-- adding sidebar to user show view -->
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <!-- 7.create helper method in app/helpers/user_helper.rb to get gravatars -->
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+</div>
