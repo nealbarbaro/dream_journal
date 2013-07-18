@@ -9,6 +9,9 @@
         <%= @user.name %>
       </h1>
     </section>
+    <!-- pluralize(current_user.posts.count, "post") -->
+    <h2> <%= @user.posts.where(:lucid => true).count %> Lucid  </h2>
+    <h2> <%= @user.posts.where(:lucid => false).count %> Not Lucid  </h2>
   </aside>
     <div class="span7">
     <% if @user.posts.any? %>
