@@ -1,7 +1,7 @@
 <% provide(:title, @user.name) %>
 <div class="row">
   <!-- adding sidebar to user show view -->
-  <aside class="span4">
+  <aside class="span5">
     <section>
       <h1>
         <%= gravatar_for @user %>
@@ -10,9 +10,9 @@
       </h1>
     </section>
   </aside>
-    <div class="span8">
+    <div class="span7">
     <% if @user.posts.any? %>
-      <h3>Posts (<%= @user.posts.count %>)</h3>
+      <h3>Dreams (<%= @user.posts.count %>)</h3>
       <ol class="posts">
         <%= render @posts %>
       </ol>

@@ -5,6 +5,9 @@
   </div>
   <div class="field">
     <%= f.text_area :content, placeholder: "Create new post..." %>
+  <%= f.label :lucid %>
+  <%= f.check_box :lucid, {}, true, false %>
   </div>
+
   <%= f.submit "Post", class: "btn btn-medium btn-inverse" %>
 <% end %>

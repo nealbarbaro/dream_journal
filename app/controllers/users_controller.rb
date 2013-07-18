@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :signed_in_user, only: [:index, :edit, :update]
+  before_filter :signed_in_user, only: [:edit, :update]
   before_filter :correct_user,   only: [:edit, :update]
-  before_filter :admin_user,     only: :destroy
+  before_filter :admin_user,     only: [:index, :destroy]
 
   def show #7
     @user = User.find(params[:id])
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       sign_in @user
       flash[:sucess] = "Welcome to the Lucid Dream Journal!"
       # Handle a successful save, remember .save returns true or false
-      redirect_to @user
+      redirect_to root_path
         #don't have to write user_url in redirect
     else
       render 'new'
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     if @user = User.find(params[:id])
       flash[:success] = "Profile updated"
       sign_in @user
-      redirect_to @user
+      redirect_to root_path
     else
       render 'edit'
     end
