@@ -11,10 +11,10 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
-  gem 'bootstrap-sass'
   gem 'annotate'
 end
 
+  gem 'bootstrap-sass'
   gem 'faker'
   gem 'will_paginate'
   gem 'bootstrap-will_paginate'
