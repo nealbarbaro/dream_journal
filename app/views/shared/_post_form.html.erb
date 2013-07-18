@@ -1,10 +1,10 @@
 <%= form_for(@post) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="night-mode">
-    <button type="button" class="btn btn-primary night-button" data-toggle="button">Night Mode</button>
+    <button type="button" class="btn btn-inverse night-button" data-toggle="button">Night Mode</button>
   </div>
   <div class="field">
     <%= f.text_area :content, placeholder: "Create new post..." %>
   </div>
-  <%= f.submit "Post", class: "btn btn-medium btn-primary" %>
+  <%= f.submit "Post", class: "btn btn-medium btn-inverse" %>
 <% end %>

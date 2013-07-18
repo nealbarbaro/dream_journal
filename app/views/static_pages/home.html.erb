@@ -10,22 +10,18 @@
         </section>
       </aside>
       <div class="span7">
-        <h3>Post Feed</h3>
+        <h3>Dreams</h3>
         <%= render 'shared/feed' %>
       </div>
     </div>
   <% else %>
     <div class="center hero-unit">
-      <h1>Welcome to the Lucid Dream Journal</h1>
+      <h1>Do you want</h1>
+      <h1>to take a</h1>
+      <h1>leap of faith?</h1>
 
-      <h2>
-        This is the home page for the
-        <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-        sample application.
-      </h2>
-
-      <%= link_to "Sign up now!", signup_path,
-                                  class: "btn btn-large btn-primary" %>
+      <%= link_to "Leap!", signup_path,
+                                  class: "btn btn-large btn-inverse" %>
     </div>
 
 <% end %>
