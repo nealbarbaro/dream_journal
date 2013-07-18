@@ -4,17 +4,18 @@ gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-group :development do
   gem 'pg'
+
+group :development do
   gem 'pry-rails'
   gem 'pry-debugger'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
-  gem 'bootstrap-sass'
   gem 'annotate'
 end
 
+  gem 'bootstrap-sass'
   gem 'faker'
   gem 'will_paginate'
   gem 'bootstrap-will_paginate'
