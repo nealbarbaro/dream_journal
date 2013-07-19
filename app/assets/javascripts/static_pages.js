@@ -93,11 +93,6 @@ $(document).ready(function(){
     });
 
 
-    // # $(document).bind('click mousedown dblclick',function(e){
-    // #   e.stopPropagation();
-    // #   e.preventDefault()
-    // #   e.stopImmediatePropagation()
-    // # });
 
   });
 });
