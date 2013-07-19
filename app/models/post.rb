@@ -7,6 +7,7 @@
 #  user_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  lucid      :boolean          default(FALSE)
 #
 
 class Post < ActiveRecord::Base
