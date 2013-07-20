@@ -1,17 +1,20 @@
 <% provide(:title, @user.name) %>
 <div class="row">
   <!-- adding sidebar to user show view -->
-  <aside class="span5">
+  <aside class="span6">
     <section>
       <h1>
         <%= gravatar_for @user %>
-        <!-- 7.create helper method in app/helpers/user_helper.rb to get gravatars -->
+        <!-- helper method in app/helpers/user_helper.rb to get gravatars -->
         <%= @user.name %>
       </h1>
+      <span>
+        <%= link_to "record dreams", root_path %>
+      </span>
+      <span>
+        <%= pluralize(current_user.posts.count, "dream") %>
+      </span>
     </section>
-    <!-- pluralize(current_user.posts.count, "post") -->
-    <h2> <%= @user.posts.where(:lucid => true).count %> Lucid  </h2>
-    <h2> <%= @user.posts.where(:lucid => false).count %> Not Lucid  </h2>
     <div id="lucid-donut"></div>
     <script>
       Morris.Donut({
@@ -24,13 +27,8 @@
         });
     </script>
   </aside>
-    <div class="span7">
-    <% if @user.posts.any? %>
-      <h3>Dreams (<%= @user.posts.count %>)</h3>
-      <ol class="posts">
-        <%= render @posts %>
-      </ol>
-      <%= will_paginate @posts %>
-    <% end %>
+  <div class="span6">
+    <h3>Dreams</h3>
+    <%= render 'shared/feed' %>
   </div>
 </div>

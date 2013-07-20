@@ -1,7 +1,13 @@
 <li id="<%= feed_item.id %>">
   <span class="user">
   </span>
-  <span class="content"><%= feed_item.content %></span>
+
+  <span class="content">
+    <% if feed_item.lucid? %>
+      <i class="icon-eye-open icon-white"></i>
+    <% end %>
+    <%= simple_format(feed_item.content) %>
+  </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
   </span>

@@ -1,9 +1,19 @@
 $(document).ready(function(){
 
+  // Morris.Donut({
+  //   element: 'lucid-donut',
+  //   data: [
+  //       {label: "Lucid", value: <%= @user.posts.where(:lucid => true).count %>},
+  //       {label: "Non-Lucid", value: <%= @user.posts.where(:lucid => false).count %>}
+  //   ],
+  //   colors: ["#cd680b","#022440"]
+  // });
+
+
+
   $(document).keydown(function(e){
     console.log(e.which);
   })
-
 
 
   $('.night-button').on('click', function(){

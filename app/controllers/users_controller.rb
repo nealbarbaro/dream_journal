@@ -3,23 +3,21 @@ class UsersController < ApplicationController
   before_filter :correct_user,   only: [:edit, :update]
   before_filter :admin_user,     only: [:index, :destroy]
 
-  def show #7
+  def show
     @user = User.find(params[:id])
     @posts = @user.posts.paginate(page: params[:page])
+    @feed_items = current_user.posts.paginate(page: params[:page])
   end
 
-  def new #7 for the signup page, next add create for form submission
+  def new
     @user = User.new
   end
 
-  def create #7 for the signup page submission, a POST request to /users URI
+  def create
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:sucess] = "Welcome to the Lucid Dream Journal!"
-      # Handle a successful save, remember .save returns true or false
       redirect_to root_path
-        #don't have to write user_url in redirect
     else
       render 'new'
     end

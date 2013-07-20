@@ -4,10 +4,12 @@
     <button type="button" class="btn btn-inverse night-button" data-toggle="button">Night Mode</button>
   </div>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Create new post..." %>
-  <%= f.label :lucid %>
-  <%= f.check_box :lucid, {}, true, false %>
-  </div>
+    <%= f.text_area :content, placeholder: "Record dreams here..." %>
 
-  <%= f.submit "Post", class: "btn btn-medium btn-inverse" %>
+  </div>
+  <div id="submit-post">
+    <%= f.check_box :lucid, {}, true, false %>
+    <%= f.label :lucid %>
+    <%= f.submit "Post", class: "btn btn-medium btn-inverse" %>
+  </div>
 <% end %>
