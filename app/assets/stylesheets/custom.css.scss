@@ -266,3 +266,21 @@ aside {
 #metrics {
   border-top: 1px solid #eeeeee;
 }
+
+.night-button {
+  float: right;
+}
+.post-button {
+  float: left;
+  display: inline;
+  margin-right: 10px;
+}
+
+label {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+input[type="checkbox"] {
+
+}
