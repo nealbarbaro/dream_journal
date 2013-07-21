@@ -68,16 +68,8 @@ $(document).ready(function(){
   }; // keyDisable
 
   var mouseDisable = function(){
-    $(document).on({
-      "contextmenu": function(e) {
-        e.preventDefault();
-      },
-      "mousedown": function(e) {
-        // e.preventDefault();
-      },
-      "mouseup": function(e) {
-        // e.preventDefault();
-      }
+    $(document).on("contextmenu.nightMode", function(e){
+      e.preventDefault();
     });
   }; // mouseDisable
 
@@ -86,15 +78,19 @@ $(document).ready(function(){
     $("#post_content")[0].setSelectionRange(9999,9999);
   }; // focusCursor
 
+  var nightTimer = setInterval(focusCursor, 500);
+
   var nightMode = function(){
-    setInterval(focusCursor, 500);
-    focusCursor();
+    nightTimer;
     keyDisable();
     mouseDisable();
+    // $("body").css("opacity", "0.5");
   }; // nightMode
 
   var dayMode = function(){
     $(document).off("keydown.nightMode");
+    $(document).off("contextmenu.nightMode");
+    clearInterval(nightTimer);
   }; // dayMode
 
   $('.night-on').on('click',  nightMode);
