@@ -1,0 +1,2 @@
+$("#post_content").val("")
+$(".posts").prepend('<%= j render partial: 'shared/post_item', locals: { post_item: @post } %>');

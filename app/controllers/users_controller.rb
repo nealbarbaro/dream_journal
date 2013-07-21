@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:edit, :update]
-  before_filter :correct_user,   only: [:edit, :update]
+  before_filter :correct_user,   only: [:show, :edit, :update]
   before_filter :admin_user,     only: [:index, :destroy]
 
   def show
     @user = User.find(params[:id])
-    @posts = current_user.posts.paginate(page: params[:page])
+    @posts = @user.posts.paginate(page: params[:page])
   end
 
   def new

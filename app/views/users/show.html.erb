@@ -12,20 +12,25 @@
         <%= link_to "record dreams", root_path %>
       </span>
       <span>
-        <%= pluralize(current_user.posts.count, "dream") %>
+        <%= pluralize(@user.posts.count, "dream") %>
       </span>
     </section>
-    <div id="lucid-donut"></div>
-    <script>
-      Morris.Donut({
-        element: 'lucid-donut',
-        data: [
-            {label: "Lucid", value: <%= @user.posts.where(:lucid => true).count %>},
-            {label: "Non-Lucid", value: <%= @user.posts.where(:lucid => false).count %>}
-        ],
-        colors: ["#cd680b","#022440"]
-        });
-    </script>
+    <div id="metrics">
+      <div id="lucid-donut">
+      </div>
+    </div>
+    <% if @user.posts.any? %>
+      <script>
+        Morris.Donut({
+          element: 'lucid-donut',
+          data: [
+              {label: "Lucid", value: <%= @user.posts.where(:lucid => true).count %>},
+              {label: "Non-Lucid", value: <%= @user.posts.where(:lucid => false).count %>}
+          ],
+          colors: ["#cd680b","#022440"]
+          });
+      </script>
+    <% end %>
   </aside>
   <div class="span6">
     <h3>Dreams</h3>

@@ -7,19 +7,26 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(params[:post])
-    if @post.save
-      redirect_to root_url
-    else
-      # @feed_items = []
-      # render 'static_pages/home'
-      flash[:error] = "Post cannot be blank."
-      redirect_to root_url
+
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to root_url }
+        format.js # create.js.erb
+      else
+        format.html { flash[:error] = "Post cannot be blank."}
+          # redirect_to root_url }
+        format.js #
+      end
     end
   end
 
   def destroy
     @post.destroy
-    redirect_to root_url
+
+    respond_to do |format|
+      format.html {redirect_to root_url}
+      format.js # destroy.js.erb
+    end
   end
 
   private
