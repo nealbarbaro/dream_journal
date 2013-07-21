@@ -77,7 +77,6 @@ p {
 
 #logo {
   float: left;
-  margin-right: 10px;
   font-size: 1.7em;
   color: #ededed;
   text-transform: uppercase;
@@ -267,20 +266,64 @@ aside {
   border-top: 1px solid #eeeeee;
 }
 
-.night-button {
-  float: right;
-}
-.post-button {
-  float: left;
-  display: inline;
-  margin-right: 10px;
-}
-
-label {
-  display: inline-block;
-  margin-top: 20px;
-}
-
 input[type="checkbox"] {
 
 }
+
+.night-label{
+  display: inline;
+  padding-right: 10px;
+  margin-top: 5px;
+}
+
+.navbar-inner{
+  .container {
+    >a,
+    >h4,
+    >nav{
+      width: 33%;
+      float: left;
+      margin: 0;
+      padding: 0;
+      line-height: 41px;
+    }
+    >h4{
+      text-align: center;
+      color: #ea760c
+    }
+    >nav{
+      position: relative;
+      >ul{
+        left: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.content{
+  >i {
+    float: left;
+    display: block;
+    margin-right: 5px;
+  }
+}
+
+.night-area, #submit-post{
+  text-align: right;
+  label{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  input{
+    margin-top: 0;
+  }
+}
+
+/*body{
+  opacity: 0.5;
+}*/

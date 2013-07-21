@@ -2,8 +2,9 @@
   <div class="navbar-inner">
     <div class="container">
       <%= link_to "Dreamstasher", root_path, id: "logo" %>
+      <h4>Live {in} Your Dreams</h4>
       <nav>
-        <ul class="nav pull-right">
+        <ul class="nav">
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Help", help_path %></li>
           <% if signed_in? %>
