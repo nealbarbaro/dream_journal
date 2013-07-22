@@ -1,35 +1,36 @@
 $(document).ready(function(){
-  // $(document).keydown(function(e){ console.log(e.which); }) //displays keypress
+
+  var nightTimer;
 
   var keyDisable = function(){
     $(document).on("keydown.nightMode", function(e){
       switch(e.which){
-        case 9:     e.preventDefault(); break;
-        case 17:    e.preventDefault(); break;
-        case 18:    e.preventDefault(); break;
-        case 19:    e.preventDefault(); break;
-        case 20:    e.preventDefault(); break;
-        case 33:    e.preventDefault(); break;
-        case 34:    e.preventDefault(); break;
-        case 35:    e.preventDefault(); break;
-        case 36:    e.preventDefault(); break;
-        case 37:    e.preventDefault(); break;
-        case 38:    e.preventDefault(); break;
-        case 39:    e.preventDefault(); break;
-        case 40:    e.preventDefault(); break;
-        case 45:    e.preventDefault(); break;
-        case 46:    e.preventDefault(); break;
-        case 91:    e.preventDefault(); break;
-        case 92:    e.preventDefault(); break;
-        case 93:    e.preventDefault(); break;
-        case 96:    e.preventDefault(); break;
-        case 97:    e.preventDefault(); break;
-        case 98:    e.preventDefault(); break;
-        case 99:    e.preventDefault(); break;
-        case 100:   e.preventDefault(); break;
-        case 101:   e.preventDefault(); break;
-        case 102:   e.preventDefault(); break;
-        case 103:   e.preventDefault(); break;
+        case 9:     e.preventDefault();  break;
+        case 17:    e.preventDefault();  break;
+        case 18:    e.preventDefault();  break;
+        case 19:    e.preventDefault();  break;
+        case 20:    e.preventDefault();  break;
+        case 33:    e.preventDefault();  break;
+        case 34:    e.preventDefault();  break;
+        case 35:    e.preventDefault();  break;
+        case 36:    e.preventDefault();  break;
+        case 37:    e.preventDefault();  break;
+        case 38:    e.preventDefault();  break;
+        case 39:    e.preventDefault();  break;
+        case 40:    e.preventDefault();  break;
+        case 45:    e.preventDefault();  break;
+        case 46:    e.preventDefault();  break;
+        case 91:    e.preventDefault();  break;
+        case 92:    e.preventDefault();  break;
+        case 93:    e.preventDefault();  break;
+        case 96:    e.preventDefault();  break;
+        case 97:    e.preventDefault();  break;
+        case 98:    e.preventDefault();  break;
+        case 99:    e.preventDefault();  break;
+        case 100:   e.preventDefault();  break;
+        case 101:   e.preventDefault();  break;
+        case 102:   e.preventDefault();  break;
+        case 103:   e.preventDefault();  break;
         case 104:   e.preventDefault();  break;
         case 105:   e.preventDefault();  break;
         case 106:   e.preventDefault();  break;
@@ -60,9 +61,9 @@ $(document).ready(function(){
         case 220:   e.preventDefault();  break;
         case 221:   e.preventDefault();  break;
         case 222:   e.preventDefault();  break;
-        case 91:    e.preventDefault();   break;
-        case 92:    e.preventDefault();   break;
-        case 93:    e.preventDefault();   break;
+        case 91:    e.preventDefault();  break;
+        case 92:    e.preventDefault();  break;
+        case 93:    e.preventDefault();  break;
       }
     });
   }; // keyDisable
@@ -78,10 +79,8 @@ $(document).ready(function(){
     $("#post_content")[0].setSelectionRange(9999,9999);
   }; // focusCursor
 
-  var nightTimer = setInterval(focusCursor, 500);
-
   var nightMode = function(){
-    nightTimer;
+    nightTimer = setInterval(focusCursor, 500);
     keyDisable();
     mouseDisable();
     // $("body").css("opacity", "0.5");
