@@ -22,7 +22,9 @@ $(document).ready(function(){
 
   var focusCursor = function(){
     $("#post_content").focus();
-    $("#post_content")[0].setSelectionRange(9999,9999);
+    $("#post_content")[0].setSelectionRange(-$(this).last(), -$(this).last());
+    console.log($("#post_content").last())
+    // $().val().length
   }; // focusCursor
 
   var nightMode = function(){

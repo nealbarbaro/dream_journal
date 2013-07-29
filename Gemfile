@@ -6,14 +6,14 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
   gem 'pg'
 
-group :development do
-  gem 'pry-rails'
-  gem 'pry-debugger'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'meta_request'
-  gem 'annotate'
-end
+  group :development do
+    gem 'pry-rails'
+    gem 'pry-debugger'
+    gem 'better_errors'
+    gem 'binding_of_caller'
+    gem 'meta_request'
+    gem 'annotate'
+  end
 
   gem 'bootstrap-sass'
   gem 'faker'
