@@ -2,8 +2,9 @@ $(document).ready(function(){
 
   var nightTimer;
   var autoLogTimer;
-  var post_content = $('#post_content');
-  var postButton = $('#post-button');
+  var $document = $(document);
+  var $post_content = $('#post_content');
+  var $post_button = $('#post_button');
 
   var keyArray = [9, 17, 18, 19, 20, 33, 34, 35, 36, 37, 38, 39, 40, 45, 46,
    91, 92, 93, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 109,
@@ -11,7 +12,7 @@ $(document).ready(function(){
    145, 186, 187, 189, 191, 192, 219, 220, 221, 222, 91, 92, 93];
 
   var keyDisable = function(){
-    $(document).on("keydown.nightMode", function(e){
+    $document.on("keydown.nightMode", function(e){
       clearTimeout(autoLogTimer);
       autoLogTimer = setTimeout(autoLog, 300000);
       if (_.contains(keyArray, e.which)){
@@ -21,18 +22,18 @@ $(document).ready(function(){
   }; // keyDisable
 
   var mouseDisable = function(){
-    $(document).on("contextmenu.nightMode", function(e){
+    $document.on("contextmenu.nightMode", function(e){
       e.preventDefault();
     });
   }; // mouseDisable
 
   var focusCursor = function(){
-    post_content.focus();
-    post_content[0].setSelectionRange(9999,9999);
+    $post_content.focus();
+    $post_content[0].setSelectionRange(9999,9999);
   }; // focusCursor
 
   var autoLog = function(){
-    postButton.click();
+    $post_button.click();
   }; // autoLog
 
   var nightMode = function(){
@@ -42,8 +43,8 @@ $(document).ready(function(){
   }; // nightMode
 
   var dayMode = function(){
-    $(document).off("keydown.nightMode");
-    $(document).off("contextmenu.nightMode");
+    $document.off("keydown.nightMode");
+    $document.off("contextmenu.nightMode");
     clearInterval(nightTimer);
     clearTimeout(autoLogTimer);
   }; // dayMode
