@@ -1,6 +1,10 @@
 $(document).ready(function(){
 
   var nightTimer;
+  var lastPress = 0;
+  var post_content = $('#post_content');
+  var postButton = $('#post-button');
+
   var keyArray = [9, 17, 18, 19, 20, 33, 34, 35, 36, 37, 38, 39, 40, 45, 46,
    91, 92, 93, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 109,
    110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 144,
@@ -8,6 +12,7 @@ $(document).ready(function(){
 
   var keyDisable = function(){
     $(document).on("keydown.nightMode", function(e){
+      lastPress = Date.now();
       if (_.contains(keyArray, e.which)){
         e.preventDefault();
       }
@@ -21,25 +26,31 @@ $(document).ready(function(){
   }; // mouseDisable
 
   var focusCursor = function(){
-    $("#post_content").focus();
-    $("#post_content")[0].setSelectionRange(-$(this).last(), -$(this).last());
-    console.log($("#post_content").last())
-    // $().val().length
+    post_content.focus();
+    post_content[0].setSelectionRange(9999,9999);
   }; // focusCursor
+
+  var autoLog = function(){
+    if ((Date.now() - lastPress) > 300000){
+      postButton.click();
+    }
+  }; // autoLog
 
   var nightMode = function(){
     nightTimer = setInterval(focusCursor, 500);
+    autoLogTimer = setInterval(autoLog, 600000)
     keyDisable();
     mouseDisable();
-    // $("body").css("opacity", "0.5");
   }; // nightMode
 
   var dayMode = function(){
     $(document).off("keydown.nightMode");
     $(document).off("contextmenu.nightMode");
     clearInterval(nightTimer);
+    clearInterval(autoLogTimer);
   }; // dayMode
 
+  // Event Handlers
   $('.night-on').on('click',  nightMode);
   $('.night-off').on('click', dayMode);
 

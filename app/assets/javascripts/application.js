@@ -13,4 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require morris.min.js
+//= require raphael-min.js
+//= require underscore-min.js
+//= require zen-form.js
 //= require_tree .
