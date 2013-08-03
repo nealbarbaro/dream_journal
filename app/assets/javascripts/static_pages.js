@@ -45,7 +45,7 @@ $(document).ready(function(){
     $(document).off("keydown.nightMode");
     $(document).off("contextmenu.nightMode");
     clearInterval(nightTimer);
-    clearInterval(autoLogTimer);
+    clearTimeout(autoLogTimer);
   }; // dayMode
 
   // ######Event Handlers######
