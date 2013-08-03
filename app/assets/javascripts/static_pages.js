@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   var nightTimer;
-  var lastPress = 0;
+  var autoLogTimer;
   var post_content = $('#post_content');
   var postButton = $('#post-button');
 
@@ -12,7 +12,8 @@ $(document).ready(function(){
 
   var keyDisable = function(){
     $(document).on("keydown.nightMode", function(e){
-      lastPress = Date.now();
+      clearTimeout(autoLogTimer);
+      autoLogTimer = setTimeout(autoLog, 300000);
       if (_.contains(keyArray, e.which)){
         e.preventDefault();
       }
@@ -31,14 +32,11 @@ $(document).ready(function(){
   }; // focusCursor
 
   var autoLog = function(){
-    if ((Date.now() - lastPress) > 300000){
-      postButton.click();
-    }
+    postButton.click();
   }; // autoLog
 
   var nightMode = function(){
     nightTimer = setInterval(focusCursor, 500);
-    autoLogTimer = setInterval(autoLog, 600000)
     keyDisable();
     mouseDisable();
   }; // nightMode
@@ -50,7 +48,7 @@ $(document).ready(function(){
     clearInterval(autoLogTimer);
   }; // dayMode
 
-  // Event Handlers
+  // ######Event Handlers######
   $('.night-on').on('click',  nightMode);
   $('.night-off').on('click', dayMode);
 

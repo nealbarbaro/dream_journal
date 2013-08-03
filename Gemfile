@@ -13,6 +13,7 @@ gem 'rails', '3.2.13'
     gem 'binding_of_caller'
     gem 'meta_request'
     gem 'annotate'
+    gem 'bullet'
   end
 
   gem 'bootstrap-sass'

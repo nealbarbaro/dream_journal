@@ -1,8 +1,5 @@
-<%= form_for @post, :remote => true do |f| %>
+<%= form_for(@post, :html => {:class => "zen-mode new_post", :id => "new_post"}, :as => @post, :url => posts_path(@post), :remote => true)  do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-<!--   <div class="night-mode">
-    <button type="button" class="btn btn-inverse night-button" data-toggle="button">Night Mode</button>
-  </div> -->
   <div class="night-zone">
     <div class="night-area">
       <h5 class="night-label">Night Mode</h5>
