@@ -6,8 +6,12 @@
 <ul class="users">
   <% @users.each do |user| %>
     <li>
-      <%= gravatar_for user %>
-      <%= link_to user.name, user %>
+      <% if user.guest? %>
+        <%= link_to "Guest #{user.id}", user %>
+      <% else %>
+        <%= gravatar_for user %>
+        <%= link_to user.name, user %>
+      <% end %>
       <% if current_user.admin? && !current_user?(user) %>
         | <%= link_to "delete", user, method: :delete,
                                   data: { confirm: "You sure?" } %>

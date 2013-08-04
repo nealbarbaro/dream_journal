@@ -14,6 +14,10 @@
         <%= pluralize(@user.posts.count, "dream") %>
       </span>
     </section>
+    <% if current_user.guest? %>
+      <%= link_to "Sign Out and Delete Entries", signout_path, method: :delete,
+          data: { confirm: "This will erase all your journal entries, are you sure?"} %>
+    <% end %>
     <div id="metrics">
       <div id="lucid-donut">
       </div>
