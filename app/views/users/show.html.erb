@@ -1,12 +1,11 @@
-<% provide(:title, @user.name) %>
+<% provide(:title, @user.username) %>
 <div class="row">
   <!-- adding sidebar to user show view -->
   <aside class="span6">
     <section>
       <h1>
         <%= gravatar_for @user %>
-        <!-- helper method in app/helpers/user_helper.rb to get gravatars -->
-        <%= @user.name %>
+        <%= @user.username %>
       </h1>
       <span>
         <%= link_to "record dreams", root_path %>

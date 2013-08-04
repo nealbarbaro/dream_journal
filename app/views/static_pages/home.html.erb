@@ -19,8 +19,7 @@
       <h1>Do you want</h1>
       <h1>to take a</h1>
       <h1>leap of faith?</h1>
-      <%= link_to "Leap!", signup_path,
-                                  class: "btn btn-large btn-inverse" %>
+      <%= link_to "Leap!", users_path, method: :post, class: "btn btn-large btn-inverse" %>
     </div>
 
 <% end %>

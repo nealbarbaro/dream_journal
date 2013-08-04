@@ -1,8 +1,5 @@
 <% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
-<!-- form_for takes AR obj and constructs form using obj attributes,
-  define an @user in corresponding controller action, form_for expects
-  @user to be a User object, and were creating a new user so it's User.new  -->
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
