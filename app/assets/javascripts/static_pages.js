@@ -58,7 +58,6 @@ $(document).ready(function(){
     });
   }; // toggleLucid
 
-
   // ######Event Handlers######
   $('.night-on').on('click',  nightMode);
   $('.night-off').on('click', dayMode);
@@ -66,3 +65,4 @@ $(document).ready(function(){
   $('body').on('click', '.icon-eye-open', toggleLucid);
 
 }); // Document ready
+

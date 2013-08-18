@@ -2,7 +2,8 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="night-zone">
     <div class="night-area">
-      <h5 class="night-label">Night Mode</h5><a href="#myModal" role="button" data-toggle="modal" class="question-link">?</a>
+      <h5 class="night-label">Night Mode</h5>
+      <%= link_to "?", "/night_modal/", class: "question-link", data: { remote: "true"} %>
       <div class="btn-group night-mode" data-toggle="buttons-radio">
         <button type="button" class="btn btn-inverse night-on">On</button>
         <button type="button" class="btn btn-inverse night-off">Off</button>
@@ -10,31 +11,11 @@
     </div>
     <div class="field">
       <%= f.text_area :content, placeholder: "Record dreams here..." %>
-
     </div>
     <div id="submit-post">
       <%= f.submit "Post", id: "post_button", class: "btn btn-medium btn-inverse post-button" %>
     </div>
   </div>
 
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">What is Night Mode?</h3>
-  </div>
-  <div class="modal-body">
-    <p>Night mode enables you to record your dreams by placing your keyboard/laptop next to your bed and typing with your eyes closed. It will:</p>
-    <ul>
-      <li>Disable all keys that could mess up the cursor (ie: tab)</li>
-      <li>Force the cursor to the bottom-most portion of text.</li>
-      <li>Auto-submit dreams after 5 minutes of no typing.</li>
-    </ul>
-    <p>It is recommended to turn down your screen brightness, and to set your computer to not go into suspend over the night.</p>
-  </div>
-  <div class="modal-footer">
-    <button class="btn-inverse" data-dismiss="modal" aria-hidden="true">Close</button>
-  </div>
-</div>
-
-
+  <div id="modal_window"></div>
 <% end %>

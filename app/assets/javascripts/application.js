@@ -16,5 +16,6 @@
 //= require morris.min.js
 //= require raphael-min.js
 //= require underscore-min.js
-//= require zen-form.js
+//= require jquery.purr
+//= require best_in_place
 //= require_tree .
