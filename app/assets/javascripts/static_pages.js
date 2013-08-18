@@ -50,11 +50,11 @@ $(document).ready(function(){
   }; // dayMode
 
   var toggleLucid = function(){
-    var post_id = $(this).parents('li').attr('id')
+    var $post_id = $(this).parents('li').attr('id')
     $.ajax({
       dataType: "script",
       type: "get",
-      url: "/togglelucid/" + post_id
+      url: "/togglelucid/" + $post_id
     });
   }; // toggleLucid
 

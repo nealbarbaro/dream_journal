@@ -272,7 +272,7 @@ input[type="checkbox"] {
 
 .night-label{
   display: inline;
-  padding-right: 10px;
+  padding-right: 7px;
   margin-top: 5px;
 }
 
@@ -317,7 +317,7 @@ input[type="checkbox"] {
   label{
     display: inline-block;
     vertical-align: middle;
-    margin-right: 10px;
+    margin-right: 2px;
   }
   input{
     margin-top: 0;
@@ -325,10 +325,23 @@ input[type="checkbox"] {
 }
 
 .orange {
-  color: #ea760c !important
+  color: #ea760c !important;
 }
 
 .icon-eye-open {
   zoom: 1.5;
   -moz-transform: scale(1.5);
+}
+
+#myModal{
+  background-color: #494949;
+}
+
+.modal-footer{
+  background-color: #494949;
+}
+
+.question-link{
+  font-size: 20px;
+  padding-right: 5px;
 }
