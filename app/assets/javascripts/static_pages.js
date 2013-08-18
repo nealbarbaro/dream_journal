@@ -49,8 +49,20 @@ $(document).ready(function(){
     clearTimeout(autoLogTimer);
   }; // dayMode
 
+  var toggleLucid = function(){
+    var post_id = $(this).parents('li').attr('id')
+    $.ajax({
+      dataType: "script",
+      type: "get",
+      url: "/togglelucid/" + post_id
+    });
+  }; // toggleLucid
+
+
   // ######Event Handlers######
   $('.night-on').on('click',  nightMode);
   $('.night-off').on('click', dayMode);
+
+  $('body').on('click', '.icon-eye-open', toggleLucid);
 
 }); // Document ready

@@ -5,6 +5,8 @@
   <span class="content">
     <% if post_item.lucid? %>
       <i class="icon-eye-open icon-white"></i>
+    <% else %>
+      <i class="icon-eye-open"></i>
     <% end %>
     <%= simple_format(post_item.content) %>
   </span>

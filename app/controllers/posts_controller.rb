@@ -29,6 +29,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def togglelucid
+    @post = Post.find(params[:id])
+    @post.toggle!(:lucid)
+  end
+
   private
 
     def correct_user
