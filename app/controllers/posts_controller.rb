@@ -21,18 +21,13 @@ class PostsController < ApplicationController
   end
 
 
+  def edit
+    @post =Post.find(params[:id])
+  end
+
   def update
     @post = Post.find params[:id]
-
-    respond_to do |format|
-      if @post.update_attributes(params[:post])
-        format.html { redirect_to(@user, :notice => 'Post was successfully updated.') }
-        format.json { respond_with_bip(@post) }
-      else
-        format.html { render :action => "edit" }
-        format.json { respond_with_bip(@post) }
-      end
-    end
+    @post.update_attributes(params[:post])
   end
 
   def destroy

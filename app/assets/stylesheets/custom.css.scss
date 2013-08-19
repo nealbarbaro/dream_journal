@@ -224,10 +224,13 @@ input {
 .posts {
   list-style: none;
   margin: 10px 0 0 0;
-
   li {
-    padding: 5px 0;
     border-top: 1px solid #e8e8e8;
+    padding: 5px 0;
+    li{
+      border-top: none;
+      padding: none;
+    }
     p{
       margin: 0;
       line-height: 1.2em;
@@ -333,9 +336,22 @@ input[type="checkbox"] {
   -moz-transform: scale(1.5);
 }
 
-#myModal{
+#myModal, #edit_modal{
   background-color: #494949;
 }
+
+#edit_text_area {
+  height: 200px;
+  margin-bottom: 5px;
+}
+
+.edit_button{
+  margin-top: 0px;
+  margin-bottom: 10px;
+  float: right;
+  margin-right: 10px;
+}
+
 
 .modal-footer{
   background-color: #494949;

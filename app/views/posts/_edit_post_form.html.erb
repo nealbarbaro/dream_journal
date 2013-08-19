@@ -1,0 +1,11 @@
+<div id="edit_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Edit Post</h3>
+  </div>
+  <%= form_for(@post, :html => {:class => "edit_post", :id => "edit_post"}, :as => @post, :url => post_path(@post), :remote => true)  do |f| %>
+    <%= f.text_area :content %>
+    <%= f.submit "Update", class: "edit_button btn btn-medium btn-inverse" %>
+    <button class="edit_button btn btn-medium btn-inverse" data-dismiss="modal" aria-hidden="true">Cancel</button>
+  <% end %>
+</div>
