@@ -39,7 +39,7 @@ textarea {
 
 .center {
   text-align: right;
-  test-align: bottom;
+  text-align: bottom;
 }
 
 .center h1 {
@@ -334,6 +334,7 @@ input[type="checkbox"] {
 .icon-eye-open {
   zoom: 1.5;
   -moz-transform: scale(1.5);
+  &:hover { cursor: pointer; }
 }
 
 #myModal, #edit_modal{
@@ -352,7 +353,6 @@ input[type="checkbox"] {
   margin-right: 10px;
 }
 
-
 .modal-footer{
   background-color: #494949;
 }
@@ -360,4 +360,10 @@ input[type="checkbox"] {
 .question-link{
   font-size: 20px;
   padding-right: 5px;
+}
+
+.error-modal{
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 0px;
 }

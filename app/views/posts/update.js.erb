@@ -1,2 +1,6 @@
-$('#edit_modal').modal('hide');
-$('#<%= @post.id %>').empty().prepend('<%= j render partial: 'shared/post_item', locals: { post_item: @post } %>');
+<% if @post.errors.any? %>
+  $('#update_errors').html('<p class="error-modal">Post cannot be blank.</p>')
+<% else %>
+  $('#edit_modal').modal('hide');
+  $('#<%= @post.id %>').empty().prepend('<%= j render partial: 'shared/post_item', locals: { post_item: @post } %>');
+<% end %>

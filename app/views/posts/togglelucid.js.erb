@@ -1,2 +1,9 @@
 var post_icon = $('#<%= @post.id %> i');
-post_icon.hasClass('icon-white') ? post_icon.removeClass('icon-white') : post_icon.addClass('icon-white');
+if (post_icon.hasClass('icon-white')) {
+  post_icon.removeClass('icon-white');
+  post_icon.attr("title", "Mark as lucid");
+}
+else {
+  post_icon.addClass('icon-white');
+  post_icon.attr("title", "Mark as not lucid");
+}

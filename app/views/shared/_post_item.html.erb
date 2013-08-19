@@ -1,9 +1,9 @@
 <li id="<%= post_item.id %>">
   <span class="content">
     <% if post_item.lucid? %>
-      <i class="icon-eye-open icon-white"></i>
+      <i class="icon-eye-open icon-white" title="Mark as non-lucid"></i>
     <% else %>
-      <i class="icon-eye-open"></i>
+      <i class="icon-eye-open" title="Mark as lucid"></i>
     <% end %>
     <%= simple_format(post_item.content) %>
   </span>
