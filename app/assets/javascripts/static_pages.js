@@ -50,7 +50,7 @@ $(document).ready(function(){
   }; // dayMode
 
   var toggleLucid = function(){
-    var $post_id = $(this).parents('li').attr('id')
+    var $post_id = $(this).parents('li').attr('id');
     $.ajax({
       dataType: "script",
       type: "get",
@@ -65,4 +65,3 @@ $(document).ready(function(){
   $('body').on('click', '.icon-eye-open', toggleLucid);
 
 }); // Document ready
-
