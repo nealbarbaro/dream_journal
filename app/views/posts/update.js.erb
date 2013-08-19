@@ -1,3 +1,2 @@
-console.log("update")
 $('#edit_modal').modal('hide');
 $('#<%= @post.id %>').empty().prepend('<%= j render partial: 'shared/post_item', locals: { post_item: @post } %>');
